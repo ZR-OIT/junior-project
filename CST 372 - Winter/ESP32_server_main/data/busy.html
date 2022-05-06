@@ -1,0 +1,26 @@
+<!--Electronic Directory Board-->
+<!--Zak Rowland - 2020-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electronic Directory Board Control</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="data:,">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+			function Reload() {setTimeout(function(){ document.location.reload(true); }, 500);}
+		</script>
+	</head>
+	<body>
+		<h1>Electronic Directory Board Control</h1>
+		<center><h2>Current hour block: %NTP_HOUR%</h2></center>
+		<p>The server is currently being controlled by another client.</p>
+		<br>
+		<form action="/view-monday" target="hidden-form">
+			<input name = "view-monday" type="submit" id = "view-monday" value="View Only Mode" onclick="document.location.href='/view-monday'">
+		</form>
+		<iframe style="display:none" name="hidden-form"></iframe>
+		<br>
+		Note: JavaScript must be enabled.
+	</body>
+</html>

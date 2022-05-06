@@ -1,0 +1,233 @@
+<!--Electronic Directory Board-->
+<!--Zak Rowland - 2020-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electronic Directory Board Control</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="data:,">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+			function Reload() {setTimeout(function(){ document.location.reload(true); }, 500);}
+			function Logout() {setTimeout(function(){ document.location.href='/'; }, 1000);}
+		</script>
+	</head>
+	<body>
+		<h1>Electronic Directory Board Control</h1>
+		<center><h2>Current hour block: %NTP_HOUR%</h2></center>
+		<table>
+			<tr>
+				<th>
+					<center><p>Displaying weekday: <strong>%DAY%</strong></p></center>
+				</th>
+				<th>
+					<label for="weekday">Choose a weekday:</label>
+					<form action="/get" target="hidden-form">
+						<select id="weekday" name="weekday">
+							<option selected="true" disabled="true" value="weekday-placeholder">-</option>
+							<option value="monday">Monday</option>
+							<option value="tuesday">Tuesday</option>
+							<option value="wednesday">Wednesday</option>
+							<option value="thursday">Thursday</option>
+							<option value="friday">Friday</option>
+						</select><input type="submit" value="Select" onclick="Reload()">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<center><p>Displaying hour block: <strong>%HOUR%</strong></p></center>
+				</th>
+				<th>
+					<label for="hour-block">Choose an hour block:</label>
+					<form action="/get" target="hidden-form">
+						<select name="hour-block">
+							<option selected="true" disabled="true" value="hour-block-placeholder">-</option>
+							<option value="eight-to-nine">8AM to 9AM</option>
+							<option value="nine-to-ten">9AM to 10AM</option>
+							<option value="ten-to-eleven">10AM to 11AM</option>
+							<option value="eleven-to-noon">11AM to 12PM</option>
+							<option value="noon-to-one">12PM to 1PM</option>
+							<option value="one-to-two">1PM to 2PM</option>
+							<option value="two-to-three">2PM to 3PM</option> 
+							<option value="three-to-four">3PM to 4PM</option>
+							<option value="four-to-five">4PM to 5PM</option>
+							<option value="five-to-six">5PM to 6PM</option>
+						</select><input type="submit" value="Select" onclick="Reload()">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<th>
+					<form action="/monday-control" target="hidden-form">
+						<input name = "monday-control" type="submit" id = "monday-control" value="Monday Control" onclick="document.location.href='/monday-control';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/tuesday-control" target="hidden-form">
+						<input name = "tuesday-control" type="submit" id = "tuesday-control" value="Tuesday Control" onclick="document.location.href='/tuesday-control';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/wednesday-control" target="hidden-form">
+						<input name = "wednesday-control" type="submit" id = "wednesday-control" value="Wednesday Control" onclick="document.location.href='/wednesday-control';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/thursday-control" target="hidden-form">
+						<input name = "thursday-control" type="submit" id = "thursday-control" value="Thursday Control" onclick="document.location.href='/thursday-control';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/friday-control" target="hidden-form">
+						<input name = "friday-control" type="submit" id = "friday-control" value="Friday Control" onclick="document.location.href='/friday-control';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/fakehour" target="hidden-form">
+						<input name = "fakehour" type="submit" id = "fakehour" value="Trigger Hour Change" onclick="Reload()">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/logout" target="hidden-form">
+						<input name = "logout" type="submit" id = "logout" value="Logout" onclick="Logout()">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<th>Lab Number</th>
+				<th>Status</th>
+				<th>Change Status</th>
+			</tr>
+			<tr>
+				<td>PV104</td>
+				<td>%PV104STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-104-status">
+						<option selected="true" disabled="true" value="pv-104-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe>
+			</tr>
+			<tr>
+				<td>PV107</td>
+				<td>%PV107STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-107-status">
+						<option selected="true" disabled="true" value="pv-107-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV108</td>
+				<td>%PV108STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-108-status">
+						<option selected="true" disabled="true" value="pv-108-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV110</td>
+				<td>%PV110STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-110-status">
+						<option selected="true" disabled="true" value="pv-110-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV119</td>
+				<td>%PV119STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-119-status">
+						<option selected="true" disabled="true" value="pv-119-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV120</td>
+				<td>%PV120STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-120-status">
+						<option selected="true" disabled="true" value="pv-120-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV147</td>
+				<td>%PV147STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-147-status">
+						<option selected="true" disabled="true" value="pv-147-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+			<tr>
+				<td>PV153</td>
+				<td>%PV153STAT%</td>
+				<td><form action="/set" target="hidden-form">
+					<select name="pv-153-status">
+						<option selected="true" disabled="true" value="pv-153-status-placeholder">-</option>
+						<option value="open">Open</option>
+						<option value="booked">Booked</option>
+						<option value="cancelled">Cancelled</option>
+						<option value="late">Late</option>
+					</select><input type="submit" value="Change" onclick="Reload()">
+				</form>
+				<iframe style="display:none" name="hidden-form"></iframe></td>
+			</tr>
+		</table>
+		<br>
+		Note: JavaScript must be enabled.
+	</body>
+</html>

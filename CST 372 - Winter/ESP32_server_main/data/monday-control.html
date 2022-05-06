@@ -1,0 +1,825 @@
+<!--Electronic Directory Board-->
+<!--Zak Rowland - 2020-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electronic Directory Board Control</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="data:,">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+			function Reload() {setTimeout(function(){ document.location.reload(true); }, 1000);}
+			function Logout() {setTimeout(function(){ document.location.href='/'; }, 1000);}
+			function ChangeThings() {setTimeout(function(){ document.location.href='/control-directory'; }, 1000);}
+		</script>
+	</head>
+	<body>
+		<h1>Electronic Directory Board Control</h1>
+		<center><h2>Current hour block: %NTP_HOUR%</h2></center>
+		<p>Updating weekday: <strong>Monday</strong></p>
+		<br>
+		<table>
+			<tr>
+				<th>
+					<form action="/control-directory" target="hidden-form">
+						<input name = "control-directory" type="submit" id = "control-directory" value="Return to hour block editor" onclick="document.location.href='/control-directory';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+				<th>
+					<form action="/logout" target="hidden-form">
+						<input name = "logout" type="submit" id = "logout" value="Logout" onclick="Logout()">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe>
+				</th>
+			</tr>
+		</table>
+		<br>
+		<form action="/update-monday" target="hidden-form">  
+			<fieldset>  
+			<table>
+				<tr>
+					<th>Lab Number</th>
+					<th>8AM to 9AM</th>
+					<th>9AM to 10AM</th>
+					<th>10AM to 11AM</th>
+					<th>11AM to 12PM</th>
+					<th>12PM to 1PM</th>
+					<th>1PM to 2PM</th>
+					<th>2PM to 3PM</th>
+					<th>3PM to 4PM</th>
+					<th>4PM to 5PM</th>
+					<th>5PM to 6PM</th>
+				</tr>
+				<tr>
+					<td>
+						PV104
+					</td>
+					<td>
+						<select name="pv104-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv104-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>  
+				<tr>
+					<td>
+						PV107
+					</td>
+					<td>
+						<select name="pv107-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv107-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						PV108
+					</td>
+					<td>
+						<select name="pv108-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv108-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						PV110
+					</td>
+					<td>
+						<select name="pv110-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv110-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>  
+				<tr>
+					<td>
+						PV119
+					</td>
+					<td>
+						<select name="pv119-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv119-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						PV120
+					</td>
+					<td>
+						<select name="pv120-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv120-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						PV147
+					</td>
+					<td>
+						<select name="pv147-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv147-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>  
+				<tr>
+					<td>
+						PV153
+					</td>
+					<td>
+						<select name="pv153-mon-8to9">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-9to10">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-10to11">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-11to12">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-12to1">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-1to2">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-2to3">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-3to4">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-4to5">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+					<td>
+						<select name="pv153-mon-5to6">
+							<option selected="true" disabled="true">-</option>
+							<option value="Open">Open</option>
+							<option value="Booked">Booked</option>
+							<option value="Cancelled">Cancelled</option>
+							<option value="Late">Late</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<input type="submit" value="Update" onclick="ChangeThings()">
+			</fieldset>
+		</form>
+		<iframe style="display:none" name="hidden-form"></iframe>
+		<br>
+		Note: JavaScript must be enabled.
+	</body>
+</html>

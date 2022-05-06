@@ -1,0 +1,173 @@
+<!--Electronic Directory Board-->
+<!--Zak Rowland - 2020-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electronic Directory Board Status</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="data:,">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1>Electronic Directory Board Status</h1>
+		<center><h2>Current hour block: %NTP_HOUR%</h2></center>
+		<p>Displaying weekday: <strong>Thursday</strong></p>
+		<br>
+		<table>
+			<tr>
+				<th>
+					<center><form action="/control-directory" target="hidden-form">
+						<input name = "control-directory" type="submit" id = "control-directory" value="Board Control Login" onclick="document.location.href='/control-directory';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe></center>
+				</th>
+				<th>
+					<center><form action="/view-monday" target="hidden-form">
+						<input name = "view-monday" type="submit" id = "view-monday" value="View Monday" onclick="document.location.href='/view-monday';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe></center>
+				</th>
+				<th>
+					<center><form action="/view-tuesday" target="hidden-form">
+						<input name = "view-tuesday" type="submit" id = "view-tuesday" value="View Tuesday" onclick="document.location.href='/view-tuesday';">
+					</form>
+				<iframe style="display:none" name="hidden-form"></iframe></center>
+				</th>
+				<th>
+					<center><form action="/view-wednesday" target="hidden-form">
+						<input name = "view-wednesday" type="submit" id = "view-wednesday" value="View Wednesday" onclick="document.location.href='/view-wednesday';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe></center>
+				</th>
+				<th>
+					<center><form action="/view-friday" target="hidden-form">
+						<input name = "view-friday" type="submit" id = "view-friday" value="View Friday" onclick="document.location.href='/view-friday';">
+					</form>
+					<iframe style="display:none" name="hidden-form"></iframe></center>
+				</th>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<th>Lab Number</th>
+				<th>8AM to 9AM</th>
+                <th>9AM to 10AM</th>
+                <th>10AM to 11AM</th>
+                <th>11AM to 12PM</th>
+                <th>12PM to 1PM</th>
+                <th>1PM to 2PM</th>
+                <th>2PM to 3PM</th>
+                <th>3PM to 4PM</th>
+                <th>4PM to 5PM</th>
+                <th>5PM to 6PM</th>
+			</tr>
+			<tr>
+				<td>PV104</td>
+				<td>%PV104STAT_THURS_8TO9%</td>
+                <td>%PV104STAT_THURS_9TO10%</td>
+                <td>%PV104STAT_THURS_10TO11%</td>
+                <td>%PV104STAT_THURS_11TO12%</td>
+                <td>%PV104STAT_THURS_12TO1%</td>
+                <td>%PV104STAT_THURS_1TO2%</td>
+                <td>%PV104STAT_THURS_2TO3%</td>
+                <td>%PV104STAT_THURS_3TO4%</td>
+                <td>%PV104STAT_THURS_4TO5%</td>
+                <td>%PV104STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV107</td>
+				<td>%PV107STAT_THURS_8TO9%</td>
+                <td>%PV107STAT_THURS_9TO10%</td>
+                <td>%PV107STAT_THURS_10TO11%</td>
+                <td>%PV107STAT_THURS_11TO12%</td>
+                <td>%PV107STAT_THURS_12TO1%</td>
+                <td>%PV107STAT_THURS_1TO2%</td>
+                <td>%PV107STAT_THURS_2TO3%</td>
+                <td>%PV107STAT_THURS_3TO4%</td>
+                <td>%PV107STAT_THURS_4TO5%</td>
+                <td>%PV107STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV108</td>
+				<td>%PV108STAT_THURS_8TO9%</td>
+                <td>%PV108STAT_THURS_9TO10%</td>
+                <td>%PV108STAT_THURS_10TO11%</td>
+                <td>%PV108STAT_THURS_11TO12%</td>
+                <td>%PV108STAT_THURS_12TO1%</td>
+                <td>%PV108STAT_THURS_1TO2%</td>
+                <td>%PV108STAT_THURS_2TO3%</td>
+                <td>%PV108STAT_THURS_3TO4%</td>
+                <td>%PV108STAT_THURS_4TO5%</td>
+                <td>%PV108STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV110</td>
+				<td>%PV110STAT_THURS_8TO9%</td>
+                <td>%PV110STAT_THURS_9TO10%</td>
+                <td>%PV110STAT_THURS_10TO11%</td>
+                <td>%PV110STAT_THURS_11TO12%</td>
+                <td>%PV110STAT_THURS_12TO1%</td>
+                <td>%PV110STAT_THURS_1TO2%</td>
+                <td>%PV110STAT_THURS_2TO3%</td>
+                <td>%PV110STAT_THURS_3TO4%</td>
+                <td>%PV110STAT_THURS_4TO5%</td>
+                <td>%PV110STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV119</td>
+				<td>%PV119STAT_THURS_8TO9%</td>
+                <td>%PV119STAT_THURS_9TO10%</td>
+                <td>%PV119STAT_THURS_10TO11%</td>
+                <td>%PV119STAT_THURS_11TO12%</td>
+                <td>%PV119STAT_THURS_12TO1%</td>
+                <td>%PV119STAT_THURS_1TO2%</td>
+                <td>%PV119STAT_THURS_2TO3%</td>
+                <td>%PV119STAT_THURS_3TO4%</td>
+                <td>%PV119STAT_THURS_4TO5%</td>
+                <td>%PV119STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV120</td>
+				<td>%PV120STAT_THURS_8TO9%</td>
+                <td>%PV120STAT_THURS_9TO10%</td>
+                <td>%PV120STAT_THURS_10TO11%</td>
+                <td>%PV120STAT_THURS_11TO12%</td>
+                <td>%PV120STAT_THURS_12TO1%</td>
+                <td>%PV120STAT_THURS_1TO2%</td>
+                <td>%PV120STAT_THURS_2TO3%</td>
+                <td>%PV120STAT_THURS_3TO4%</td>
+                <td>%PV120STAT_THURS_4TO5%</td>
+                <td>%PV120STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV147</td>
+				<td>%PV147STAT_THURS_8TO9%</td>
+                <td>%PV147STAT_THURS_9TO10%</td>
+                <td>%PV147STAT_THURS_10TO11%</td>
+                <td>%PV147STAT_THURS_11TO12%</td>
+                <td>%PV147STAT_THURS_12TO1%</td>
+                <td>%PV147STAT_THURS_1TO2%</td>
+                <td>%PV147STAT_THURS_2TO3%</td>
+                <td>%PV147STAT_THURS_3TO4%</td>
+                <td>%PV147STAT_THURS_4TO5%</td>
+                <td>%PV147STAT_THURS_5TO6%</td>
+			</tr>
+			<tr>
+				<td>PV153</td>
+				<td>%PV153STAT_THURS_8TO9%</td>
+                <td>%PV153STAT_THURS_9TO10%</td>
+                <td>%PV153STAT_THURS_10TO11%</td>
+                <td>%PV153STAT_THURS_11TO12%</td>
+                <td>%PV153STAT_THURS_12TO1%</td>
+                <td>%PV153STAT_THURS_1TO2%</td>
+                <td>%PV153STAT_THURS_2TO3%</td>
+                <td>%PV153STAT_THURS_3TO4%</td>
+                <td>%PV153STAT_THURS_4TO5%</td>
+                <td>%PV153STAT_THURS_5TO6%</td>
+			</tr>
+		</table>
+        <br>
+		Note: JavaScript must be enabled.
+	</body>
+</html>
